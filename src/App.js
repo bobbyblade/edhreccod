@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import './App.css';
+import Footer from './footer'
 
 function App() {
   const [data,setData]=useState([]);
@@ -28,7 +29,9 @@ function App() {
     <div className="App">
      {
        data && data.length>0 && data.map((item)=><p><auto-card key={item.date}>{item.name}</auto-card> - {new Date(item.date).toLocaleDateString('en-us')}</p>)
-     }
+    
+    }
+    <Footer/>
     </div>
   );
 }

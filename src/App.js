@@ -29,7 +29,7 @@ function App() {
     <div className="App">
       <div className="card-container">
      {
-       data && data.length>0 && data.map((item)=><p>{new Date(item.date).toLocaleDateString('en-us')}<br /><auto-card-image key={item.date}>{item.name}</auto-card-image><br />{item.name}</p>)
+       data && data.length>0 && data.map((item)=><p key={item.date}>{new Date(item.date).toLocaleDateString('en-us')}<br /><a href={"https://scryfall.com/card/".concat(item.scryfall_uri)}><img alt={item.name} src={item.img} /></a><br />{item.name}</p>)
     }
       </div>
     <Footer/>

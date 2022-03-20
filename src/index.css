@@ -29,9 +29,9 @@ code {
   width:95vw;
   flex-wrap: wrap;
 }
-auto-card-image {
+.card-container p {
   margin:2px 10px;
 }
-auto-card-image img {
+.card-container img {
   width:250px;
 }

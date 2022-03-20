@@ -27,10 +27,11 @@ function App() {
   },[])
   return (
     <div className="App">
+      <div className="card-container">
      {
-       data && data.length>0 && data.map((item)=><p><auto-card key={item.date}>{item.name}</auto-card> - {new Date(item.date).toLocaleDateString('en-us')}</p>)
-    
+       data && data.length>0 && data.map((item)=><p>{new Date(item.date).toLocaleDateString('en-us')}<br /><auto-card-image key={item.date}>{item.name}</auto-card-image><br />{item.name}</p>)
     }
+      </div>
     <Footer/>
     </div>
   );

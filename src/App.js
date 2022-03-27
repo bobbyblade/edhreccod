@@ -1,7 +1,9 @@
 import React,{useState,useEffect} from 'react';
 import './App.css';
 import Footer from './footer'
-
+function Card(props) {
+  return <p key={props.date}>{new Date(props.date).toLocaleDateString('en-us')}<br /><a href={"https://scryfall.com/card/".concat(props.scryfall_uri)}><img alt={props.name} src={props.img} /></a><br />{props.name}</p>
+}
 function App() {
   const [data,setData]=useState([]);
   let url = 'https://edhreccod-dev-serverlessdeploymentbucket-xyf9ylmxxem6.s3.amazonaws.com/serverless/edhreccod/json/ercod.json';
@@ -29,7 +31,7 @@ function App() {
     <div className="App">
       <div className="card-container">
      {
-       data && data.length>0 && data.map((item)=><p key={item.date}>{new Date(item.date).toLocaleDateString('en-us')}<br /><a href={"https://scryfall.com/card/".concat(item.scryfall_uri)}><img alt={item.name} src={item.img} /></a><br />{item.name}</p>)
+       data && data.length>0 && data.map((item)=><Card key={item.date} date={item.date} scryfall_uri={item.scryfall_uri} name={item.name} img={item.img} />)
     }
       </div>
     <Footer/>

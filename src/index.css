@@ -13,7 +13,7 @@ code {
 }
 .footer {
   margin-top: 1rem;
-  padding: 1rem;
+  padding: .25rem;
   background-color: rgb(235, 195, 64);
   position: fixed;
   bottom: 0;
@@ -25,7 +25,7 @@ code {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-bottom: 150px;
+  margin-bottom: 7rem;
   width:95vw;
   flex-wrap: wrap;
 }

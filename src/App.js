@@ -32,7 +32,6 @@ class App extends Component {
   }
   onFormSubmit(e) {
     e.preventDefault();
-    console.log(this.state.startDate)
     this.setState({datePicked: false});
   }
   componentDidMount(){
@@ -48,7 +47,6 @@ class App extends Component {
       }
       );
     const data = await res.json();
-    console.log(data);
     return this.setState({data:data});
  }
 
@@ -59,8 +57,6 @@ class App extends Component {
     datePicked = this.state.datePicked;
     if(datePicked) {
       data = data.filter( l=> {
-        console.log(searchDate);
-        console.log(new Date(l.date).toLocaleDateString('en-us'))
         return new Date(l.date).toLocaleDateString('en-us').match( new Date(searchDate).toLocaleDateString('en-us') );
       });
     }

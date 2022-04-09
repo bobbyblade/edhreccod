@@ -12,9 +12,9 @@ class App extends Component {
 
   constructor (props) {
     super(props)
-    //let url = 'https://edhreccod-dev-serverlessdeploymentbucket-xyf9ylmxxem6.s3.amazonaws.com/serverless/edhreccod/json/ercod.json';
-    let local_url = 'ercod.json';
-    this.url = local_url;
+    let url = 'https://edhreccod-dev-serverlessdeploymentbucket-xyf9ylmxxem6.s3.amazonaws.com/serverless/edhreccod/json/ercod.json';
+    //let local_url = 'ercod.json';
+    this.url = url;
     this.state = {
       startDate: new Date(),
       data: {},

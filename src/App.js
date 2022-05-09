@@ -6,7 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Card(props) {
-  return <p key={props.date}>{new Date(props.date).toLocaleDateString('en-us')}<br /><a href={"https://scryfall.com/card/".concat(props.scryfall_uri)}><img alt={props.name} src={props.img} /></a><br />{props.name}</p>
+  return <p key={props.date}>{new Date(props.date).toLocaleDateString('en-us')}<br /><a href={'https://scryfall.com/card/' + props.scryfall_uri}><img alt={props.name} src={props.img} /></a><br /><a href={'https://scryfall.com/card/' + props.scryfall_uri}>[sf]</a> <a href={props.spellbook_uri}>[csb]</a> <a href={'https://edhrec.com' + props.url}>[er]</a> <a href={props.moxfield_uri}>[mox]</a><br />{props.name}</p>
 }
 class App extends Component {
 
@@ -51,8 +51,7 @@ class App extends Component {
  }
 
   render() {
-    var data,
-    data = this.state.data,
+    var data = this.state.data,
     searchDate = this.state.startDate,
     datePicked = this.state.datePicked;
     if(datePicked) {
@@ -75,7 +74,7 @@ class App extends Component {
       </form>
       <div className="card-container">
      {
-       data && data.length>0 && data.map((item)=><Card key={item.date} date={item.date} scryfall_uri={item.scryfall_uri} name={item.name} img={item.img} />)
+       data && data.length>0 && data.map((item)=><Card key={item.date} date={item.date} scryfall_uri={item.scryfall_uri} name={item.name} img={item.img} spellbook_uri={item.spellbook_uri} url={item.url} moxfield_uri={item.moxfield_uri} />)
     }
       </div>
     <Footer/>
